@@ -30,6 +30,12 @@ model:any={};
     this.findVaccineChittorgarh();
     this.findVaccinePratapgarh();
     this.findVaccineUdaipur();
+    this.PrintValues();
+  }
+
+  PrintValues()
+  {
+    console.log(this.vaccineChittorgarh);
   }
 
   findVaccineChittorgarh()
@@ -37,8 +43,8 @@ model:any={};
     this.vaccineService.findVaccineChittorgarh(this.model).subscribe(
       response => {
        this.vaccineData=response;
-       console.log(this.vaccineData);
-       console.log(this.vaccineData.centers[0]);
+   //    console.log(this.vaccineData);
+    //   console.log(this.vaccineData.centers[0]);
        this.vaccineData.centers.forEach(element => {
         if(element.sessions!=null)
         {
@@ -60,7 +66,6 @@ model:any={};
         console.log(error);
       }
       
-      
     );
     
      
@@ -72,8 +77,8 @@ model:any={};
     this.vaccineService.findVaccinePratapgarh(this.model).subscribe(
       response => {
        this.vaccineData=response;
-       console.log(this.vaccineData);
-       console.log(this.vaccineData.centers[0]);
+    //   console.log(this.vaccineData);
+    //   console.log(this.vaccineData.centers[0]);
        this.vaccineData.centers.forEach(element => {
         if(element.sessions!=null)
         {
@@ -107,19 +112,20 @@ model:any={};
     this.vaccineService.findVaccineUdaipur(this.model).subscribe(
       response => {
        this.vaccineData=response;
-       console.log(this.vaccineData);
-       console.log(this.vaccineData.centers[0]);
+     //  console.log(this.vaccineData);
+     //  console.log(this.vaccineData.centers[0]);
        this.vaccineData.centers.forEach(element => {
         if(element.sessions!=null)
         {
           element.sessions.forEach(sessionData => {
-            if(sessionData.min_age_limit==18 && sessionData.available_capacity>=0)
+            if(sessionData.min_age_limit==45 && sessionData.available_capacity>=0)
             {
+             // console.log(sessionData.date);
              this.vaccineUdaipur.push(
              {
                city:element.name,
                count:sessionData.available_capacity,
-               vaccineDate :sessionData.date
+               vaccineDate:sessionData.date
              });
             }
           });
@@ -130,11 +136,12 @@ model:any={};
         console.log(error);
       }
       
-      
+     
     );
     
      
- 
+ //   console.log(this.vaccineUdaipur);
+     
   }
 
 }
