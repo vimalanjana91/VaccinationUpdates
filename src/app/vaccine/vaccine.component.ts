@@ -49,7 +49,7 @@ model:any={};
         if(element.sessions!=null)
         {
           element.sessions.forEach(sessionData => {
-            if(sessionData.min_age_limit==18 && sessionData.available_capacity>=0)
+            if(sessionData.min_age_limit==18 && sessionData.available_capacity>0)
             {
              this.vaccineChittorgarh.push(
              {
@@ -83,7 +83,7 @@ model:any={};
         if(element.sessions!=null)
         {
           element.sessions.forEach(sessionData => {
-            if(sessionData.min_age_limit==45 && sessionData.available_capacity>=0)
+            if(sessionData.min_age_limit==18 && sessionData.available_capacity>0)
             {
              this.vaccinePratapgarh.push(
              {
@@ -118,7 +118,7 @@ model:any={};
         if(element.sessions!=null)
         {
           element.sessions.forEach(sessionData => {
-            if(sessionData.min_age_limit==45 && sessionData.available_capacity>=0)
+            if(sessionData.min_age_limit==18 && sessionData.available_capacity>0)
             {
              // console.log(sessionData.date);
              this.vaccineUdaipur.push(
