@@ -48,7 +48,8 @@ model:any={};
              this.vaccineChittorgarh.push(
              {
                city:element.name,
-               count:sessionData.available_capacity
+               count:sessionData.available_capacity,
+               vaccineDate :sessionData.date
              });
             }
           });
@@ -77,12 +78,13 @@ model:any={};
         if(element.sessions!=null)
         {
           element.sessions.forEach(sessionData => {
-            if(sessionData.min_age_limit==18 && sessionData.available_capacity>=0)
+            if(sessionData.min_age_limit==45 && sessionData.available_capacity>=0)
             {
              this.vaccinePratapgarh.push(
              {
                city:element.name,
-               count:sessionData.available_capacity
+               count:sessionData.available_capacity,
+               vaccineDate :sessionData.date
              });
             }
           });
@@ -116,7 +118,8 @@ model:any={};
              this.vaccineUdaipur.push(
              {
                city:element.name,
-               count:sessionData.available_capacity
+               count:sessionData.available_capacity,
+               vaccineDate :sessionData.date
              });
             }
           });

@@ -1,4 +1,5 @@
 export class VaccineModel {
-    city:string
-    count:number
+    city:string;
+    count:number;
+    vaccineDate :string;
 }
